@@ -1,0 +1,41 @@
+.paginationBlock {
+	position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    background: white;
+    padding: 13px 0 12px 230px;
+    .wrap-pagination {
+    	padding: 0 20px;
+    }
+	input, select {
+		height: 30px;
+		display: inline-block;
+		width: auto;
+		margin: 0 10px;
+		line-height: 1.4;
+		width: 40px;
+		background-color: rgba(255, 255, 255, 1);
+		border: 1px solid rgba(211, 220, 242, 1);
+		border-radius: 6px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	select {
+		width: auto;
+	}
+	.pagination {
+		margin: 0;
+		span, span:hover, a, a:hover {
+			background:none;
+			border: none;
+		}
+		li:hover {
+			span {
+				background:none;
+				border: none;
+			}
+		}
+	}
+}

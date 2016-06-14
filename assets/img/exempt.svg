@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>exempt</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="course-enrollment-selected" transform="translate(-603.000000, -18.000000)" fill="#4A4A4A">
+            <path d="M620.777778,18 L605.222222,18 C604,18 603,19 603,20.2222222 L603,35.7777778 C603,37.0005556 604,38 605.222222,38 L620.777778,38 C622,38 623,37.0005556 623,35.7777778 L623,20.2222222 C623,19 622,18 620.777778,18 L620.777778,18 Z M616.333333,24.6666667 L611.888889,24.6666667 L611.888889,26.8888889 L616.333333,26.8888889 L616.333333,29.1111111 L611.888889,29.1111111 L611.888889,31.3333333 L616.333333,31.3333333 L616.333333,33.5555556 L609.666667,33.5555556 L609.666667,22.4444444 L616.333333,22.4444444 L616.333333,24.6666667 L616.333333,24.6666667 Z" id="exempt"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+.border {
+	border: 1px solid rgba(211, 220, 242, 1);
+}
+.shadow {
+	box-shadow: 0px 2px 15px 0px rgba(208, 220, 250, 0.67);
+}
+.botron {
+	border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+}
+.table {
+	margin-bottom: 10px;
+	thead {
+		border-bottom: 1px solid rgba(211, 220, 242, 1);
+	}
+	> thead,
+	> tbody,
+	> tfoot {
+	> tr {
+		> th,
+		> td {
+		    vertical-align: middle;
+		    font-size: 14px;
+			color: rgba(74, 74, 74, 1);
+			height: 40px;
+			vertical-align: middle;
+			border: none;
+			font-weight: normal;
+			}
+		}
+	}
+}
+.table-hover > tbody > tr:hover {
+	background-color: rgba(244, 246, 253, 1);
+	border-bottom: 1px solid rgba(211, 220, 242, 1);
+	border-top: 1px solid rgba(211, 220, 242, 1);
+}

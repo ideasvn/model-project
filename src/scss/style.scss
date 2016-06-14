@@ -1,0 +1,107 @@
+@import "mixins";
+@import "responsive";
+@import "variables";
+@import "theme/icheck";
+@import "theme/header";
+@import "theme/sidebar";
+@import "theme/content";
+@import "theme/layout";
+@import "theme/form";
+@import "theme/table";
+@import "theme/button";
+@import "theme/pagination";
+
+@font-face {
+  font-family: "app-icon";
+  src:url("../fonts/app-icon.eot");
+  src:url("../fonts/app-icon.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/app-icon.woff") format("woff"),
+    url("../fonts/app-icon.ttf") format("truetype"),
+    url("../fonts/app-icon.svg#app-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "app-icon" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-icon:before {
+  font-family: "app-icon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle-right:before {
+  content: "\61";
+}
+.icon-angle-left:before {
+  content: "\62";
+}
+.icon-list-bullet:before {
+  content: "\63";
+}
+.icon-academic:before {
+  content: "\64";
+}
+.icon-dashboard:before {
+  content: "\65";
+}
+.icon-date-option:before {
+  content: "\66";
+}
+.icon-down-arrow-option:before {
+  content: "\67";
+}
+.icon-finance:before {
+  content: "\68";
+}
+.icon-inventory:before {
+  content: "\69";
+}
+.icon-left-arrow:before {
+  content: "\6a";
+}
+.icon-logo:before {
+  content: "\6b";
+}
+.icon-management:before {
+  content: "\6c";
+}
+.icon-right-arrow:before {
+  content: "\6d";
+}
+.icon-sales:before {
+  content: "\6e";
+}
+.icon-schedule:before {
+  content: "\6f";
+}
+.icon-search:before {
+  content: "\70";
+}
+.icon-up-arrow-option:before {
+  content: "\71";
+}
+.icon-upload:before {
+  content: "\72";
+}
+.icon-student:before {
+  content: "\73";
+}
