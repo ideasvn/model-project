@@ -1,0 +1,138 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: #231f20;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+
+#logo {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+nav.navigation {
+    border-bottom: 1px solid #231f20;
+}
+
+ul.menu {
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+    border: none;
+    list-style: none;
+}
+
+ul.menu li {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+ul.menu li a {
+    display: inline-block;
+    font-size: 1.285em;
+    padding: 0 0 9px;
+    text-transform: uppercase;
+}
+
+ul.menu li a.active, ul.menu li a:hover, ul.menu li a:focus {
+    color: black;
+}
+
+ul.menu li a.active:before,
+ul.menu li a:hover:before,
+ul.menu li a:focus:before {
+    background: black;
+    bottom: -2px;
+    content: "";
+    height: 4px;
+    left: 50%;
+    margin-left: -55%;
+    position: absolute;
+    width: 110%;
+}
+
+#page-title {
+    position: relative;
+    padding: 0 45px;
+    text-transform: uppercase;
+    color: #231f20;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#page-title:before {
+    background: #231f20;
+    content: '';
+    left: 0;
+    height: 1px;
+    margin-top: -0.5px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 0;
+}
+
+#page-title span {
+    font-size: 1.214em;
+    background: white;
+    position: relative;
+    padding: 0 10px;
+}
+
+.no-padding {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.home-galleries {
+    margin-bottom: 10px;
+}
+
+.model-item {
+
+}
+
+.model-item_image {
+
+}
+
+.model-item_title {
+    color: white;
+    font-size: 2.143em;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+
+.model-item_title a {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    left: 0;
+    padding: 3px 20px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    color: white;
+}
+
+footer {
+    height: 100px;
+    background: #333;
+}
