@@ -29,34 +29,33 @@ var configs = {
         './assets/js/moment.min.js'
     ],
     'appJS': [
-        './app/app.js',
-        './app/configs.js',
-        './app/constants.js',
-        './app/directives.js',
-        './app/filters.js',
-        './app/services.js',
-        './app/routers.js',
-        './app/components/**/*.js',
-        './app/partials/sidebars/sidebars.js'
+        './src/controllers/app.js',
+        './src/controllers/configs.js',
+        './src/controllers/constants.js',
+        './src/controllers/directives.js',
+        './src/controllers/filters.js',
+        './src/controllers/services.js',
+        './src/controllers/routers.js',
+        './src/controllers/components/**/*.js',
+        './src/controllers/partials/sidebars/sidebars.js'
     ],
     'ieJS': [
-        './app/assets/js/html5shiv.min.js',
-        './app/assets/js/respond.min.js'
+        './assets/js/html5shiv.min.js',
+        './assets/js/respond.min.js'
     ],
-    'modulesJS': './app/modules/**/*.js',
-    'coreCSS': './app/sass/core.scss',
-    'styleCSS': './app/sass/style.scss',
+    'modulesJS': './src/modules/**/*.js',
+    'coreCSS': './src/scss/core.scss',
+    'styleCSS': './src/scss/style.scss',
     'moduleCSS': [
-        './app/modules/**/*.scss',
-        './app/components/**/*.scss',
+        './src/modules/**/*.scss',
     ],
-    'fonts': './app/assets/fonts',
-    'images': './app/assets/img',
-    'indexHTML': './app/index.html',
-    'viewHTML': './app/modules/**/*.html',
-    'partialsHTML': './app/partials/**/*.html',
-    'layoutsHTML': './app/layouts/**/*.html',
-    'directivesHTML': './app/components/directives/**/*.html'
+    'fonts': './assets/fonts',
+    'images': './assets/img',
+    'indexHTML': './src/index.html',
+    'viewHTML': './src/modules/**/*.html',
+    'partialsHTML': './src/partials/**/*.html',
+    'layoutsHTML': './src/layouts/**/*.html',
+    'directivesHTML': './src/directives/**/*.html'
 };
 
 elixir(function (mix) {
