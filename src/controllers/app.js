@@ -1,4 +1,4 @@
-var CSMAcademy = angular.module('CSMAcademy', [
+var CSMModel = angular.module('CSMModel', [
     'QSoft.routers',
     'QSoft.constants',
     'QSoft.configs',

@@ -48,7 +48,7 @@ var configs = {
     'styleCSS': './app/sass/style.scss',
     'moduleCSS': [
         './app/modules/**/*.scss',
-        './app/components/**/*.scss',
+        './app/components/**/*.scss'
     ],
     'fonts': './app/assets/fonts',
     'images': './app/assets/img',
