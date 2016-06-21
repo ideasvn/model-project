@@ -37,7 +37,6 @@ var configs = {
         './src/controllers/services.js',
         './src/controllers/routers.js',
         './src/controllers/components/**/*.js',
-        './src/controllers/partials/sidebars/sidebars.js'
     ],
     'ieJS': [
         './assets/js/html5shiv.min.js',
@@ -55,7 +54,8 @@ var configs = {
     'viewHTML': './src/modules/**/*.html',
     'partialsHTML': './src/partials/**/*.html',
     'layoutsHTML': './src/layouts/**/*.html',
-    'directivesHTML': './src/directives/**/*.html'
+    'directivesHTML': './src/directives/**/*.html',
+	'servicesHTML': './src/services/**/views/*.html',
 };
 
 elixir(function (mix) {
@@ -71,8 +71,8 @@ elixir(function (mix) {
         .copy(configs.fonts, './public/assets/fonts/')
         .copy(configs.images, './public/assets/img/')
         .copy(configs.viewHTML, './public/views/')
-        .copy(configs.partialsHTML, './public/views/partials/')
         .copy(configs.layoutsHTML, './public/views/layouts/')
         .copy(configs.directivesHTML, './public/views/directives/')
+		.copy(configs.servicesHTML, './public/views/services/')
         .copy(configs.indexHTML, './public/index.html');
 });
