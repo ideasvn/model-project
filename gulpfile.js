@@ -9,6 +9,7 @@ var configs = {
         './assets/js/angular-messages.min.js',
         './assets/js/angular-message-format.min.js',
         './assets/js/angular-sanitize.min.js',
+        './assets/js/angular-route.min.js',
         './assets/js/restangular.min.js',
         './assets/js/ui-bootstrap.min.js',
         './assets/js/ui-router.min.js',
@@ -46,7 +47,7 @@ var configs = {
     'coreCSS': './src/scss/core.scss',
     'styleCSS': './src/scss/style.scss',
     'moduleCSS': [
-        './src/modules/**/*.scss'
+        './src/modules/**/views/*.scss'
     ],
     'fonts': './assets/fonts',
     'images': './assets/img',
