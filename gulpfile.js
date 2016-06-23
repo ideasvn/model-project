@@ -63,10 +63,8 @@ elixir(function (mix) {
             .sass(configs.coreCSS, './public/assets/css/core.css')
             .sass(configs.moduleCSS, './public/assets/css/modules.css')
             .sass(configs.styleCSS, './public/assets/css/style.css')
-            .scripts(configs.coreJS, './public/assets/js/core.js');
-    mix
-            .scripts(configs.libsJS, './public/assets/js/libs.js');
-    mix
+            .scripts(configs.coreJS, './public/assets/js/core.js')
+            .scripts(configs.libsJS, './public/assets/js/libs.js')
             .scripts(configs.appJS, './public/assets/js/app.js')
             .scripts(configs.modulesJS, './public/assets/js/modules.js')
             .scripts(configs.ieJS, './public/assets/js/ie.js')
