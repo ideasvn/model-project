@@ -9,6 +9,7 @@ var configs = {
         './assets/js/angular-messages.min.js',
         './assets/js/angular-message-format.min.js',
         './assets/js/angular-sanitize.min.js',
+        './assets/js/angular-route.min.js',
         './assets/js/restangular.min.js',
         './assets/js/ui-bootstrap.min.js',
         './assets/js/ui-router.min.js',
@@ -20,7 +21,7 @@ var configs = {
         './assets/js/datetimepicker.js',
         './assets/js/datetimepicker.templates.js',
         './assets/js/dateTimeInput.js',
-		'./assets/js/ng-file-upload-all.min.js',
+        './assets/js/ng-file-upload-all.min.js'
     ],
     'libsJS': [
         './assets/js/jquery.min.js',
@@ -29,51 +30,50 @@ var configs = {
         './assets/js/moment.min.js'
     ],
     'appJS': [
-        './app/app.js',
-        './app/configs.js',
-        './app/constants.js',
-        './app/directives.js',
-        './app/filters.js',
-        './app/services.js',
-        './app/routers.js',
-        './app/components/**/*.js',
-        './app/partials/sidebars/sidebars.js'
+        './src/controllers/app.js',
+        './src/controllers/configs.js',
+        './src/controllers/constants.js',
+        './src/controllers/directives.js',
+        './src/controllers/filters.js',
+        './src/controllers/services.js',
+        './src/controllers/routers.js',
+        './src/controllers/components/**/*.js'
     ],
     'ieJS': [
-        './app/assets/js/html5shiv.min.js',
-        './app/assets/js/respond.min.js'
+        './assets/js/html5shiv.min.js',
+        './assets/js/respond.min.js'
     ],
-    'modulesJS': './app/modules/**/*.js',
-    'coreCSS': './app/sass/core.scss',
-    'styleCSS': './app/sass/style.scss',
+    'modulesJS': './src/modules/**/*.js',
+    'coreCSS': './src/scss/core.scss',
+    'styleCSS': './src/scss/style.scss',
     'moduleCSS': [
-        './app/modules/**/*.scss',
-        './app/components/**/*.scss',
+        './src/modules/**/views/*.scss'
     ],
-    'fonts': './app/assets/fonts',
-    'images': './app/assets/img',
-    'indexHTML': './app/index.html',
-    'viewHTML': './app/modules/**/*.html',
-    'partialsHTML': './app/partials/**/*.html',
-    'layoutsHTML': './app/layouts/**/*.html',
-    'directivesHTML': './app/components/directives/**/*.html'
+    'fonts': './assets/fonts',
+    'images': './assets/img',
+    'indexHTML': './src/index.html',
+    'viewHTML': './src/modules/**/*.html',
+    'partialsHTML': './src/partials/**/*.html',
+    'layoutsHTML': './src/layouts/**/*.html',
+    'directivesHTML': './src/directives/**/*.html',
+    'servicesHTML': './src/services/**/views/*.html'
 };
 
 elixir(function (mix) {
     mix
-        .sass(configs.coreCSS, './public/assets/css/core.css')
-        .sass(configs.moduleCSS, './public/assets/css/modules.css')
-        .sass(configs.styleCSS, './public/assets/css/style.css')
-        .scripts(configs.coreJS, './public/assets/js/core.js')
-        .scripts(configs.libsJS, './public/assets/js/libs.js')
-        .scripts(configs.appJS, './public/assets/js/app.js')
-        .scripts(configs.modulesJS, './public/assets/js/modules.js')
-        .scripts(configs.ieJS, './public/assets/js/ie.js')
-        .copy(configs.fonts, './public/assets/fonts/')
-        .copy(configs.images, './public/assets/img/')
-        .copy(configs.viewHTML, './public/views/')
-        .copy(configs.partialsHTML, './public/views/partials/')
-        .copy(configs.layoutsHTML, './public/views/layouts/')
-        .copy(configs.directivesHTML, './public/views/directives/')
-        .copy(configs.indexHTML, './public/index.html');
+            .sass(configs.coreCSS, './public/assets/css/core.css')
+            .sass(configs.moduleCSS, './public/assets/css/modules.css')
+            .sass(configs.styleCSS, './public/assets/css/style.css')
+            .scripts(configs.coreJS, './public/assets/js/core.js')
+            .scripts(configs.libsJS, './public/assets/js/libs.js')
+            .scripts(configs.appJS, './public/assets/js/app.js')
+            .scripts(configs.modulesJS, './public/assets/js/modules.js')
+            .scripts(configs.ieJS, './public/assets/js/ie.js')
+            .copy(configs.fonts, './public/assets/fonts/')
+            .copy(configs.images, './public/assets/img/')
+            .copy(configs.viewHTML, './public/views/')
+            .copy(configs.layoutsHTML, './public/views/layouts/')
+            .copy(configs.directivesHTML, './public/views/directives/')
+            .copy(configs.servicesHTML, './public/views/services/')
+            .copy(configs.indexHTML, './public/index.html');
 });
