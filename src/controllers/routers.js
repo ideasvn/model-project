@@ -23,22 +23,6 @@
                             templateUrl: 'views/common/footer.html'
                         }
                     }
-                })
-                .state('app.home', {
-                    url: '/',
-//                            parent: 'app',
-                    meta: {
-                        title: 'Homepage',
-                        description: ''
-                    },
-                    views: {
-                        'main@': {
-                            templateUrl: 'views/home/index.html',
-                            // controller: ['qsPreLoader', function (qsPreLoader) {
-                            //     qsPreLoader.status(false);
-                            // }]
-                        }
-                    }
                 });
         }]);
 

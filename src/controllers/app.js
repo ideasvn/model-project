@@ -4,10 +4,10 @@
         'ui.bootstrap',
         'ngAnimate',
         'ngStorage',
+        'restangular',
         'ui.bootstrap.datetimepicker',
         'ui.dateTimeInput',
         'ngFileUpload',
-        // 'angular-nicescroll',
         'QSoft.routers',
         'QSoft.run',
         'QSoft.constants',
@@ -22,7 +22,7 @@
     angular.module('QSoft.constants', []);
     angular.module('QSoft.directives', []);
     angular.module('QSoft.filters', []);
-    angular.module('QSoft.services', ['restangular', 'ngStorage']);
+    angular.module('QSoft.services', []);
     angular.module('QSoft.modules', []);
     angular.module('QSoft.run', []);
 

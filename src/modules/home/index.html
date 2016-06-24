@@ -1,6 +1,10 @@
-<section>
+<section id="home-page" class="page">
 	<div class="row">
-		<img src="img/slideshow.png" class="img-responsive" />
+		<uib-carousel active="active" interval="myInterval">
+			<uib-slide ng-repeat="slide in homeCtr.slides track by $index" index="$index">
+				<img ng-src="{{slide.image}}" class="img-responsive">
+			</uib-slide>
+		</uib-carousel>
 	</div>
 	<div class="row">
 		<h1 class="title" id="page-title"><span><a href="model">Người mẫu</a></span></h1>
