@@ -21,7 +21,6 @@
             Restangular.all(uriSlide).getList()
                 .then(function (res) {
                     self.slides = res.slides;
-                    console.log(res.slides);
                 })
                 .then(function (error) {
 
