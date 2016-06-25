@@ -8,12 +8,12 @@
                 .state('app.home', {
                     url: '/',
                     meta: {
-                        title: 'Homepage',
+                        title: 'VietNam next top model',
                         description: ''
                     },
                     views: {
                         'main@': {
-                            templateUrl: 'scss/home/index.html',
+                            templateUrl: 'views/home/index.html',
                             controller: 'HomeController',
                             controllerAs: 'homeCtr'
                         }
