@@ -12,15 +12,24 @@
         .controller('HomeController', ['$scope', 'Restangular', function ($scope, Restangular) {
 
             var self = this,
-                uriSlide = 'data/home.json',
-                uriListModel = '';
+                uriSlide = 'slides',
+                uriListModel = 'models';
             self.slides = [];
             self.models = [];
 
             /* Get list slides */
             Restangular.all(uriSlide).getList()
                 .then(function (res) {
-                    self.slides = res.slides;
+                    self.slides = res.data;
+                })
+                .then(function (error) {
+
+                });
+
+            /* Get list models */
+            Restangular.all(uriListModel).getList()
+                .then(function (res) {
+                    self.models = res.data;
                 })
                 .then(function (error) {
 

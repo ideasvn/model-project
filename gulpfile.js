@@ -33,6 +33,7 @@ var configs = {
         './src/controllers/configs.js',
         './src/controllers/constants.js',
         './src/controllers/directives.js',
+        './src/directives/**/*.js',
         './src/controllers/filters.js',
         './src/controllers/services.js',
         './src/controllers/routers.js',
@@ -44,9 +45,10 @@ var configs = {
     ],
     'modulesJS': './src/modules/**/*.js',
     'coreCSS': './src/scss/core.scss',
+    'appCSS': './src/directives/**/*.scss',
     'styleCSS': './src/scss/style.scss',
     'moduleCSS': [
-        './src/modules/**/views/*.scss'
+        './src/modules/**/scss/*.scss'
     ],
     'fonts': './assets/fonts',
     'images': './assets/img',
@@ -55,12 +57,13 @@ var configs = {
     'partialsHTML': './src/partials/**/*.html',
     'layoutsHTML': './src/layouts/**/*.html',
     'directivesHTML': './src/directives/**/*.html',
-    'servicesHTML': './src/services/**/views/*.html'
+    'servicesHTML': './src/services/**/scss/*.html'
 };
 
 elixir(function (mix) {
     mix
             .sass(configs.coreCSS, './public/assets/css/core.css')
+            .sass(configs.appCSS, './public/assets/css/app.css')
             .sass(configs.moduleCSS, './public/assets/css/modules.css')
             .sass(configs.styleCSS, './public/assets/css/style.css')
             .scripts(configs.coreJS, './public/assets/js/core.js')
@@ -70,9 +73,9 @@ elixir(function (mix) {
             .scripts(configs.ieJS, './public/assets/js/ie.js')
             .copy(configs.fonts, './public/assets/fonts/')
             .copy(configs.images, './public/assets/img/')
-            .copy(configs.viewHTML, './public/views/')
-            .copy(configs.layoutsHTML, './public/views/layouts/')
-            .copy(configs.directivesHTML, './public/views/directives/')
-            .copy(configs.servicesHTML, './public/views/services/')
+            .copy(configs.viewHTML, './public/scss/')
+            .copy(configs.layoutsHTML, './public/scss/layouts/')
+            .copy(configs.directivesHTML, './public/scss/directives/')
+            .copy(configs.servicesHTML, './public/scss/services/')
             .copy(configs.indexHTML, './public/index.html');
 });

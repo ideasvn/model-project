@@ -13,7 +13,7 @@
                     },
                     views: {
                         'main@': {
-                            templateUrl: 'views/home/index.html',
+                            templateUrl: 'scss/home/index.html',
                             controller: 'HomeController',
                             controllerAs: 'homeCtr'
                         }
