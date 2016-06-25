@@ -21,20 +21,11 @@ class ModelController extends ApiController
         return response()->json([
             "data" => [
                 [
-                    "image" => "http://lorempixel.com/1170/293"
+                    "image" => "img/slide/banner_1.jpg"
                 ],
                 [
-                    "image" => "http://lorempixel.com/1170/293"
+                    "image" => "img/slide/banner_2.jpg"
                 ],
-                [
-                    "image" => "http://lorempixel.com/1170/293"
-                ],
-                [
-                    "image" => "http://lorempixel.com/1170/293"
-                ],
-                [
-                    "image" => "http://lorempixel.com/1170/293"
-                ]
             ]
         ]);
     }

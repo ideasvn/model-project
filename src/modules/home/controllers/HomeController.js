@@ -14,8 +14,11 @@
             var self = this,
                 uriSlide = 'slides',
                 uriListModel = 'models';
+            self.perPage = 12;
+            self.page = 1;
             self.slides = [];
             self.models = [];
+
 
             /* Get list slides */
             Restangular.all(uriSlide).getList()
@@ -27,7 +30,7 @@
                 });
 
             /* Get list models */
-            Restangular.all(uriListModel).getList()
+            Restangular.all(uriListModel).getList({per_page: self.perPage, page: self.page})
                 .then(function (res) {
                     self.models = res.data;
                 })
