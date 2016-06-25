@@ -20,7 +20,8 @@ var configs = {
         './assets/js/datetimepicker.js',
         './assets/js/datetimepicker.templates.js',
         './assets/js/dateTimeInput.js',
-        './assets/js/ng-file-upload-all.min.js'
+        './assets/js/ng-file-upload-all.min.js',
+        './assets/js/ng-infinite-scroll.min.js'
     ],
     'libsJS': [
         './assets/js/jquery.min.js',

@@ -8,6 +8,7 @@
         'ui.bootstrap.datetimepicker',
         'ui.dateTimeInput',
         'ngFileUpload',
+        'infinite-scroll',
         'QSoft.routers',
         'QSoft.run',
         'QSoft.constants',
