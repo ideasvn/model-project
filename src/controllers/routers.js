@@ -17,10 +17,10 @@
                     abstract: true,
                     views: {
                         'header': {
-                            templateUrl: 'views/common/header.html'
+                            templateUrl: 'views/layouts/header.html'
                         },
                         'footer': {
-                            templateUrl: 'views/common/footer.html'
+                            templateUrl: 'views/layouts/footer.html'
                         }
                     }
                 });

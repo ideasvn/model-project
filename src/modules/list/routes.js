@@ -13,9 +13,9 @@
                     },
                     views: {
                         'main@': {
-                            templateUrl: 'views/list/male.html',
+                            templateUrl: 'views/list/index.html',
                             controller: 'MaleModelController',
-                            controllerAs: 'maleCtr'
+                            controllerAs: 'ctr'
                         }
                     }
                 })
@@ -27,9 +27,9 @@
                     },
                     views: {
                         'main@': {
-                            templateUrl: 'views/list/female.html',
+                            templateUrl: 'views/list/index.html',
                             controller: 'FemaleModelController',
-                            controllerAs: 'femaleCtr'
+                            controllerAs: 'ctr'
                         }
                     }
                 });

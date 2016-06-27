@@ -48,7 +48,8 @@ var configs = {
     'coreCSS': './src/scss/core.scss',
     'appCSS': './src/directives/**/*.scss',
     'styleCSS': './src/scss/style.scss',
-    'moduleCSS': [
+    'modulesCSS': [
+        './src/layouts/scss/*.scss',
         './src/modules/**/scss/*.scss'
     ],
     'fonts': './assets/fonts',
@@ -65,7 +66,7 @@ elixir(function (mix) {
     mix
             .sass(configs.coreCSS, './public/assets/css/core.css')
             .sass(configs.appCSS, './public/assets/css/app.css')
-            .sass(configs.moduleCSS, './public/assets/css/modules.css')
+            .sass(configs.modulesCSS, './public/assets/css/modules.css')
             .sass(configs.styleCSS, './public/assets/css/style.css')
             .scripts(configs.coreJS, './public/assets/js/core.js')
             .scripts(configs.libsJS, './public/assets/js/libs.js')
