@@ -28,15 +28,18 @@
                     return;
                 }
 
-                Restangular.all(uri).getList({per_page: self.collection.perPage, page: self.collection.after})
+                self.collection.busy = true;
+                Restangular.all(uri).getList({per_page: self.collection.per_page, page: self.collection.after})
                     .then(function (res) {
-                        self.collection.after++;
                         var i = 0,
                             items = res.data;
-                        
+
                         for (i; i < items.length; i++) {
                             self.collection.items.push(items[i]);
                         }
+
+                        self.collection.after++;
+                        self.collection.busy = false;
 
                         if (res.current_page >= res.last_page) {
                             self.collection.ended = true;

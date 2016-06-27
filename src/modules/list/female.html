@@ -1,6 +1,16 @@
-<section id="male-page" class="page">
-    <div class="row list-galleries">
-        <model-box ng-repeat="item in maleCtr.models"
-                   class="col-md-3 item"></model-box>
+<section id="female-page" class="page">
+    <!--.lazzy-load-->
+    <div infinite-scroll='femaleCtr.collection.nextPage()'
+         infinite-scroll-disabled='femaleCtr.collection.busy'
+         infinite-scroll-distance='1'>
+        <!--.list-galleries-->
+        <div class="row list-galleries">
+            <model-box ng-repeat="item in femaleCtr.collection.items"
+                       class="col-md-3 item"></model-box>
+        </div>
+        <!--/.list-galleries-->
     </div>
+    <!--/.lazzy-load-->
+    <div class="clearfix"></div>
+    <div ng-show='femaleCtr.collection.busy'>Loading data...</div>
 </section>

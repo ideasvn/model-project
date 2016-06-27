@@ -11,13 +11,13 @@
                         title: 'Oops! Page Not Found',
                         description: ''
                     },
-                    templateUrl: '/scss/404/404.html'
+                    templateUrl: '/views/404/404.html'
                 })
                 .state('app', {
                     abstract: true,
                     views: {
                         'header': {
-                            templateUrl: 'scss/common/header.html'
+                            templateUrl: 'views/common/header.html'
                         },
                         'footer': {
                             templateUrl: 'views/common/footer.html'
