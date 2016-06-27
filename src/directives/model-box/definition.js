@@ -14,7 +14,7 @@
                 return {
                     restrict: 'EA',
                     scope: true,
-                    templateUrl: 'scss/directives/model-box/template.html',
+                    templateUrl: 'views/directives/model-box/template.html',
                     link: function (scope, element, attrs) {
                         var baseUrl = 'http://' + $location.host() + ":" + $location.port();
                         var data = scope.item;

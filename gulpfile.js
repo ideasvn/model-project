@@ -48,7 +48,8 @@ var configs = {
     'coreCSS': './src/scss/core.scss',
     'appCSS': './src/directives/**/*.scss',
     'styleCSS': './src/scss/style.scss',
-    'moduleCSS': [
+    'modulesCSS': [
+        './src/layouts/scss/*.scss',
         './src/modules/**/scss/*.scss'
     ],
     'fonts': './assets/fonts',
@@ -58,14 +59,14 @@ var configs = {
     'partialsHTML': './src/partials/**/*.html',
     'layoutsHTML': './src/layouts/**/*.html',
     'directivesHTML': './src/directives/**/*.html',
-    'servicesHTML': './src/services/**/scss/*.html'
+    'servicesHTML': './src/services/**/*.html'
 };
 
 elixir(function (mix) {
     mix
             .sass(configs.coreCSS, './public/assets/css/core.css')
             .sass(configs.appCSS, './public/assets/css/app.css')
-            .sass(configs.moduleCSS, './public/assets/css/modules.css')
+            .sass(configs.modulesCSS, './public/assets/css/modules.css')
             .sass(configs.styleCSS, './public/assets/css/style.css')
             .scripts(configs.coreJS, './public/assets/js/core.js')
             .scripts(configs.libsJS, './public/assets/js/libs.js')
@@ -74,9 +75,9 @@ elixir(function (mix) {
             .scripts(configs.ieJS, './public/assets/js/ie.js')
             .copy(configs.fonts, './public/assets/fonts/')
             .copy(configs.images, './public/assets/img/')
-            .copy(configs.viewHTML, './public/scss/')
-            .copy(configs.layoutsHTML, './public/scss/layouts/')
-            .copy(configs.directivesHTML, './public/scss/directives/')
-            .copy(configs.servicesHTML, './public/scss/services/')
+            .copy(configs.viewHTML, './public/views/')
+            .copy(configs.layoutsHTML, './public/views/layouts/')
+            .copy(configs.directivesHTML, './public/views/directives/')
+            .copy(configs.servicesHTML, './public/views/services/')
             .copy(configs.indexHTML, './public/index.html');
 });
