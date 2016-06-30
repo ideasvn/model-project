@@ -53,6 +53,7 @@
                                 controller: 'DetailModelCtr',
                                 controllerAs: 'DetailModelCtrAs',
                             }
+
                         }
                     });
             }]);
