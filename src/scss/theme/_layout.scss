@@ -5,38 +5,38 @@
 $header-height: 70px;
 $sidebar-width: 230px;
 @mixin pd($padding) {
-	.pdl-#{$padding} {
-		padding-left: #{$padding}px !important;
-	}
-	.pdr-#{$padding} {
-		padding-right: #{$padding}px !important;
-	}
-	.pdb-#{$padding} {
-		padding-bottom: #{$padding}px !important;
-	}
-	.pdt-#{$padding} {
-		padding-top: #{$padding}px !important;
-	}
-	.pd-#{$padding} {
-		padding: #{$padding}px !important;
-	}
+    .pdl-#{$padding} {
+        padding-left: #{$padding}px !important;
+    }
+    .pdr-#{$padding} {
+        padding-right: #{$padding}px !important;
+    }
+    .pdb-#{$padding} {
+        padding-bottom: #{$padding}px !important;
+    }
+    .pdt-#{$padding} {
+        padding-top: #{$padding}px !important;
+    }
+    .pd-#{$padding} {
+        padding: #{$padding}px !important;
+    }
 }
 @mixin mg($margin) {
-	.mgl-#{$margin} {
-		margin-left: #{$margin}px !important;
-	}
-	.mgr-#{$margin} {
-		margin-right: #{$margin}px !important;
-	}
-	.mgb-#{$margin} {
-		margin-bottom: #{$margin}px !important;
-	}
-	.mgt-#{$margin} {
-		margin-top: #{$margin}px !important;
-	}
-	.mg-#{$margin} {
-		margin: #{$margin}px !important;
-	}
+    .mgl-#{$margin} {
+        margin-left: #{$margin}px !important;
+    }
+    .mgr-#{$margin} {
+        margin-right: #{$margin}px !important;
+    }
+    .mgb-#{$margin} {
+        margin-bottom: #{$margin}px !important;
+    }
+    .mgt-#{$margin} {
+        margin-top: #{$margin}px !important;
+    }
+    .mg-#{$margin} {
+        margin: #{$margin}px !important;
+    }
 }
 
 //
@@ -45,7 +45,6 @@ $sidebar-width: 230px;
 .layout-content, body, html {
     height: 100%;
     position: relative;
-    overflow: hidden;
 }
 @include  pd(80);
 @include  pd(0);
@@ -59,74 +58,74 @@ $sidebar-width: 230px;
 @include  mg(20);
 @include  mg(50);
 .align-center {
-	display: block;
-	margin: 20px auto;
+    display: block;
+    margin: 20px auto;
 }
 .fixed {
-	position: fixed;
+    position: fixed;
     right: 0;
     left: 0;
     z-index: 1030;
 }
 .noMargin {
-	margin: 0 !important;
+    margin: 0 !important;
 }
 .noPadding {
-	padding: 0 !important;
+    padding: 0 !important;
 }
 .noBorder {
-	border: none !important;
+    border: none !important;
 }
 .space {
-	visibility: hidden;
+    visibility: hidden;
     flex-grow: 1;  
 }
 .botron {
-	border-radius: 6px !important;
+    border-radius: 6px !important;
 }
 .botronTopLeft {
-	border-top-left-radius: 6px !important;
+    border-top-left-radius: 6px !important;
 }
 .botronTopRight {
-	border-top-right-radius: 6px !important;	
+    border-top-right-radius: 6px !important;	
 }
 .botronBottomLeft {
-	border-bottom-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
 }
 .botronBottomRight {
-	border-bottom-right-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
 }
 .bgWhite {
-	background:white;
+    background:white;
 }
 .flex {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-	flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
-	-webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
 }
 .noBorder-bottom {
-	border-bottom: none !important;
+    border-bottom: none !important;
 }
 .noBorder-top {
-	border-top: none !important;
+    border-top: none !important;
 }
 .noBorder-right {
-	border-right: none !important;
+    border-right: none !important;
 }
 .noBorder-left {
-	border-left: none !important;
+    border-left: none !important;
 }
 .head-content {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .input.ng-invalid {
-	border: 1px solid red;	
+    border: 1px solid red;	
 }
 
 //
@@ -134,16 +133,16 @@ $sidebar-width: 230px;
 // --------------------------------------------------
 
 .header-top {
-	height: $header-height;
-	left: $sidebar-width;
+    height: $header-height;
+    left: $sidebar-width;
 }
 
 //
 // sidebar
 // --------------------------------------------------
 .sidebar {
-	width: $sidebar-width;
-	height: 100%;
+    width: $sidebar-width;
+    height: 100%;
     /*overflow-x: hidden;
     overflow-y: scroll;*/
 }
@@ -152,20 +151,20 @@ $sidebar-width: 230px;
 // content
 // --------------------------------------------------
 .layout-content {
-	margin-left: $sidebar-width;
-	padding: $header-height 0 60px;
-	.main-content {
-		padding: 30px 20px 20px 20px;
-		height: 100%;
-	}
+    margin-left: $sidebar-width;
+    padding: $header-height 0 60px;
+    .main-content {
+        padding: 30px 20px 20px 20px;
+        height: 100%;
+    }
 }
 
 //////////////////////
 //custom btn bootstrap
 ///////////////////////
 .btn-group-xs .ng-scope > .btn {
-  padding: 1px 5px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
 }

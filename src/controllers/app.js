@@ -1,7 +1,6 @@
 (function () {
     "use strict";
     angular.module('CSMModel', [
-        'ui.bootstrap',
         'ngAnimate',
         'ngStorage',
         'ui.bootstrap.datetimepicker',
@@ -23,7 +22,7 @@
     angular.module('QSoft.directives', []);
     angular.module('QSoft.filters', []);
     angular.module('QSoft.services', ['restangular', 'ngStorage']);
-    angular.module('QSoft.modules', []);
+    angular.module('QSoft.modules', ['ui.bootstrap', 'ui.calendar']);
     angular.module('QSoft.run', []);
 
 
