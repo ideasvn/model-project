@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->group(['namespace' => 'Api'], function ($api) {
+    $api->group(['namespace' => 'App\Http\Controllers\Api'], function ($api) {
         /**
          * No-need login
          */
@@ -69,6 +69,7 @@ $api->version('v1', function ($api) {
             });
         });
 
+        $api->post('register', 'Auth\AuthController@register');
 
     });
 
