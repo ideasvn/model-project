@@ -2,6 +2,11 @@ angular.module('QSoft.modules').controller('AuthRegisterCtrl', ['$scope', '$stat
         function ($scope, $state, Upload, AuthServices) {
             $scope.$state = $state;
             $scope.qsFormCreate = true;
+            $scope.node = {};
+            $scope.genders = [
+                {id: 0, name: "Name"},
+                {id: 1, name: "Nữ"}
+            ];
 
             //Process file before upload
             // $scope.processUpload = function (documentRequiredID, file, errFile) {
