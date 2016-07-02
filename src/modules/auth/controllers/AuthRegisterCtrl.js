@@ -8,6 +8,13 @@ angular.module('QSoft.modules').controller('AuthRegisterCtrl', ['$scope', '$stat
                 {id: 1, name: "Nữ"}
             ];
 
+            $scope.birthday = {
+                opened: false
+            };
+
+            $scope.openCalendar = function () {
+                $scope.birthday.opened = true;
+            };
             //Process file before upload
             // $scope.processUpload = function (documentRequiredID, file, errFile) {
             //     if(file) {
