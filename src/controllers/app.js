@@ -1,7 +1,6 @@
 (function () {
     "use strict";
     angular.module('CSMModel', [
-        'ui.bootstrap',
         'ngAnimate',
         'ngStorage',
         'restangular',
