@@ -20,7 +20,7 @@
                         var data = scope.item;
 
                         scope.data = {
-                            link: '',
+                            link: data.id,
                             title: (data.first_name ? data.first_name : '') + ' ' + (data.last_name ? data.last_name : ''),
                             image: data.galleries.length ? data.galleries[0].images : 'default.jpg'
                         };
