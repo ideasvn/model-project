@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function() {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->group(['namespace' => 'Api'], function ($api) {
+    $api->group(['namespace' => 'App\Http\Controllers\Api'], function ($api) {
         /**
          * No-need login
          */
@@ -68,5 +68,15 @@ $api->version('v1', function ($api) {
                 return 'xxx time';
             });
         });
+
+        /**
+         * tungtv api
+         */
+        $api->get('book','ModelNudeController@index');
+//        Route::get('model', [
+//            'as' => 'model', 'uses' => 'ModelNudeController@index'
+//        ]);
+//        Route::resource('model', 'ModelNudeController');
+
     });
 });
