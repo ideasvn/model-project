@@ -12,16 +12,27 @@
         .controller('HomeController', ['$scope', 'Restangular', function ($scope, Restangular) {
 
             var self = this,
-                uriSlide = 'data/home.json',
-                uriListModel = '';
+                uriSlide = 'slides',
+                uriListModel = 'models';
+            self.perPage = 12;
+            self.page = 1;
             self.slides = [];
             self.models = [];
+
 
             /* Get list slides */
             Restangular.all(uriSlide).getList()
                 .then(function (res) {
-                    self.slides = res.slides;
-                    console.log(res.slides);
+                    self.slides = res.data;
+                })
+                .then(function (error) {
+
+                });
+
+            /* Get list models */
+            Restangular.all(uriListModel).getList({per_page: self.perPage, page: self.page})
+                .then(function (res) {
+                    self.models = res.data;
                 })
                 .then(function (error) {
 

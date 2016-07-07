@@ -8,7 +8,7 @@
                 .state('app.home', {
                     url: '/',
                     meta: {
-                        title: 'Homepage',
+                        title: 'VietNam next top model',
                         description: ''
                     },
                     views: {

@@ -1,0 +1,29 @@
+<section id="list-page" class="page">
+    <!--.lazzy-load-->
+    <div infinite-scroll='ctr.collection.nextPage()'
+         infinite-scroll-disabled='ctr.collection.busy'
+         infinite-scroll-distance='1'>
+        <!--.list-galleries-->
+        <div class="row list-galleries">
+            <model-box ng-repeat="item in ctr.collection.items"
+                       class="col-md-3 item"></model-box>
+        </div>
+        <!--/.list-galleries-->
+    </div>
+    <!--/.lazzy-load-->
+    <div class="clearfix"></div>
+    <div ng-show='ctr.collection.busy'>
+        <!--.loadding-->
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+        <!--/.loadding-->
+    </div>
+</section>
