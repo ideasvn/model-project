@@ -1,137 +1,17 @@
-<section>
+<section id="home-page" class="page">
 	<div class="row">
-		<img src="img/slideshow.png" class="img-responsive" />
+		<uib-carousel active="active" interval="myInterval">
+			<uib-slide ng-repeat="slide in homeCtr.slides track by $index" index="$index">
+				<img ng-src="{{slide.image}}" class="img-responsive">
+			</uib-slide>
+		</uib-carousel>
 	</div>
 	<div class="row">
 		<h1 class="title" id="page-title"><span><a href="model">Người mẫu</a></span></h1>
 	</div>
 	<!--Gallery nguoi mau-->
 	<div class="row home-galleries">
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/1.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/6.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/4.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/5.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row home-galleries">
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/3.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/2.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/6.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/5.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row home-galleries">
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/1.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/2.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/3.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-3 no-padding">
-			<div class="model-item">
-				<div class="model-item_image">
-					<img src="img/model/4.jpg" class="img-responsive"/>
-				</div>
-				<div class="model-item_title">
-					<span><a href="#">THANH TUYEN</a></span>
-				</div>
-			</div>
-		</div>
+		<model-box ng-repeat="item in homeCtr.models"
+			class="col-md-3 item"></model-box>
 	</div>
 </section>

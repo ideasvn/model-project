@@ -19,14 +19,14 @@ Route::get('/', function () {
  * Backend Routes
  */
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function() {
+Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
     Route::get('/', function () {
         return view('welcome');
     });
 
     Route::get('/login', 'Auth\AuthController@login');
 
-    Route::group(['middleware' => 'auth'], function() {
+    Route::group(['middleware' => 'auth'], function () {
 
     });
 });
@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function() {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->group(['namespace' => 'Api'], function ($api) {
+    $api->group(['namespace' => 'App\Http\Controllers\Api'], function ($api) {
         /**
          * No-need login
          */
@@ -45,11 +45,11 @@ $api->version('v1', function ($api) {
             return 'xxx';
         });
 
-        $api->post('login', function() {
+        $api->post('login', function () {
             return Response::json(Authorizer::issueAccessToken());
         });
 
-        $api->post('/fake/account', function() {
+        $api->post('/fake/account', function () {
             $credentials = [
                 'email' => 'ideasvn@hotmail.com',
                 'password' => '12345678'
@@ -63,10 +63,37 @@ $api->version('v1', function ($api) {
          * Group need login
          */
 
-        $api->group(['middleware' => 'api.auth'], function($api) {
-            $api->get('/fake/time', function() {
+        $api->group(['middleware' => 'api.auth'], function ($api) {
+            $api->get('/fake/time', function () {
                 return 'xxx time';
             });
         });
+
+        $api->post('register', 'Auth\AuthController@register');
+
+        /**
+         * tungtv api
+         */
+        $api->resource('booking', 'Booking\BookingController');
+        $api->post('booking-list', 'Booking\BookingController@listBooking');
+        $api->post('check-date', 'Booking\BookingController@checkDate');
+//        Route::get('model', [
+//            'as' => 'model', 'uses' => 'ModelNudeController@index'
+//        ]);
+//        Route::resource('model', 'ModelNudeController');
+
+
+
     });
+
+
+    /**
+     * Group route model
+     *
+     * */
+    $api->group(['namespace' => 'App\Http\Controllers\Api\Model'], function ($api) {
+        $api->get('slides', 'ModelController@getSlides');
+        $api->get('models', 'ModelController@index');
+    });
+
 });

@@ -1,3 +1,10 @@
+#home-page {
+    .carousel-control {
+        background-image: none;
+    }
+}
+
+
 #page-title {
     position: relative;
     padding: 0 45px;
@@ -28,33 +35,7 @@
 }
 
 .home-galleries {
-    margin-bottom: 10px;
-}
-
-/* Drictive */
-.model-item {
-
-}
-
-.model-item_image {
-
-}
-
-.model-item_title {
-    color: white;
-    font-size: 2.143em;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-}
-
-.model-item_title a {
-    background: rgba(0, 0, 0, 0.7);
-    bottom: 0;
-    left: 0;
-    padding: 3px 20px;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    color: white;
+    .item {
+        padding: 10px;
+    }
 }

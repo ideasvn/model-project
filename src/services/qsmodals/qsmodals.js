@@ -5,7 +5,7 @@ angular.module('QSoft.services').service('qsModal', ['$uibModal', '$log', '$q', 
         var qsModal = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            templateUrl: '/views/services/qsmodals/views/confirm.html',
+            templateUrl: '/scss/services/qsmodals/scss/confirm.html',
             controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
                 $scope.messages = params;
                 $scope.actionConfirm = function () {
@@ -30,7 +30,7 @@ angular.module('QSoft.services').service('qsModal', ['$uibModal', '$log', '$q', 
         var qsModal = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            templateUrl: '/views/services/qsmodals/views/error.html',
+            templateUrl: '/scss/services/qsmodals/scss/error.html',
             controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
                 $scope.messages = params;
                 $scope.actionConfirm = function () {
@@ -52,7 +52,7 @@ angular.module('QSoft.services').service('qsModal', ['$uibModal', '$log', '$q', 
         var qsModal = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            templateUrl: '/views/services/qsmodals/views/person.html',
+            templateUrl: '/scss/services/qsmodals/scss/person.html',
             controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
                 $scope.node = params;
                 $scope.actionClose = function () {
@@ -73,7 +73,7 @@ angular.module('QSoft.services').service('qsModal', ['$uibModal', '$log', '$q', 
         var qsModal = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            templateUrl: '/views/services/qsmodals/views/enrollment.html',
+            templateUrl: '/scss/services/qsmodals/scss/enrollment.html',
             controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
                 $scope.node = params;
                 $scope.actionClose = function () {

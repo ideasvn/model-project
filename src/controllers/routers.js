@@ -17,27 +17,26 @@
                     abstract: true,
                     views: {
                         'header': {
-                            templateUrl: 'views/common/header.html'
+                            templateUrl: 'views/layouts/header.html'
                         },
                         'footer': {
-                            templateUrl: 'views/common/footer.html'
+                            templateUrl: 'views/layouts/footer.html'
                         }
                     }
                 })
-                .state('app.home', {
-                    url: '/',
-//                            parent: 'app',
+                .state('app.detailModel', {
+                    url: '/detail/:id',
                     meta: {
-                        title: 'Homepage',
+                        title: 'Chi Tiết Người Mẫu',
                         description: ''
                     },
                     views: {
                         'main@': {
-                            templateUrl: 'views/home/index.html',
-                            // controller: ['qsPreLoader', function (qsPreLoader) {
-                            //     qsPreLoader.status(false);
-                            // }]
+                            templateUrl: 'views/detail/index.html',
+                            controller: 'DetailModelCtr',
+                            controllerAs: 'DetailModelCtrAs'
                         }
+
                     }
                 });
         }]);

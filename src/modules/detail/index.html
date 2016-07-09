@@ -1,0 +1,136 @@
+<section>
+    <div class="row">
+        <img src="img/slideshow.png" class="img-responsive" />
+    </div>
+    <div class="row">
+        <h1 class="title" id="page-title"><span><a href="model">CHI TIẾT NGƯỜI MẪU</a></span></h1>
+    </div>
+    <!--Gallery nguoi mau-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class='row'>
+                <uib-carousel active="active" interval="2000" >
+                    <uib-slide ng-repeat="image in detailModel.images" index="$index">
+                        <img ng-src="{{image.value}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                        </div>
+                    </uib-slide>
+                </uib-carousel>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" style='padding:0px'>
+            <div class="wrap">
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Chiều cao:</div>
+                    <div class="col-md-12">{{detailModel.height}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Vòng ngực:</div>
+                    <div class="col-md-12">{{detailModel.roundBrest}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Vòng eo:</div>
+                    <div class="col-md-12">{{detailModel.waistSize}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Vòng mông:</div>
+                    <div class="col-md-12">{{detailModel.roundHip}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Cỡ áo:</div>
+                    <div class="col-md-12">{{detailModel.dressSize}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Cỡ quần:</div>
+                    <div class="col-md-12">{{detailModel.shoreSize}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Màu tóc:</div>
+                    <div class="col-md-12">{{detailModel.hairColor}}</div>
+                </div>
+                <div class='detail clearfix'>
+                    <div class="col-md-12">Màu mắt:</div>
+                    <div class="col-md-12">{{detailModel.eyeColor}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-8'>
+            <div class="col-md-12">
+                <div class='wrap-calendar'>
+                    <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+                    <button class='btn btn-default btn-lg' style='margin-top:5px'>Booking</button>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-6">
+                    <p>Start Date</p>
+                    <p class="input-group">
+                        <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup1.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <p>Hours</p>
+                    <select class="form-control" ng-model="node.startHours">
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                    </select>
+                    <p>Mins</p>
+                    <select class="form-control" ng-model="node.startMins">
+                        <option value="00">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <p>End Date</p>
+                    <p class="input-group">
+                        <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="dt2" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup2.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <p>Hours</p>
+                    <select class="form-control" ng-model="node.endHours">
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                    </select>
+                    <p>Mins</p>
+                    <select class="form-control" ng-model="node.endMins">
+                        <option value="00">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
