@@ -23,6 +23,21 @@
                             templateUrl: 'views/layouts/footer.html'
                         }
                     }
+                })
+                .state('app.detailModel', {
+                    url: '/detail/:id',
+                    meta: {
+                        title: 'Chi Tiết Người Mẫu',
+                        description: ''
+                    },
+                    views: {
+                        'main@': {
+                            templateUrl: 'views/detail/index.html',
+                            controller: 'DetailModelCtr',
+                            controllerAs: 'DetailModelCtrAs'
+                        }
+
+                    }
                 });
         }]);
 

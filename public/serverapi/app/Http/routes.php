@@ -71,6 +71,19 @@ $api->version('v1', function ($api) {
 
         $api->post('register', 'Auth\AuthController@register');
 
+        /**
+         * tungtv api
+         */
+        $api->resource('booking', 'Booking\BookingController');
+        $api->post('booking-list', 'Booking\BookingController@listBooking');
+        $api->post('check-date', 'Booking\BookingController@checkDate');
+//        Route::get('model', [
+//            'as' => 'model', 'uses' => 'ModelNudeController@index'
+//        ]);
+//        Route::resource('model', 'ModelNudeController');
+
+
+
     });
 
 
