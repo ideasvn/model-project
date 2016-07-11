@@ -52,6 +52,6 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
 
 
         /* event sources array*/
-        $scope.eventSources = [$scope.events]
-            ;
+        $scope.eventSources = [$scope.events];
+        console.log($scope.eventSources);
     }]);
