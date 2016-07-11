@@ -16,7 +16,7 @@
     angular.module('QSoft.directives', []);
     angular.module('QSoft.filters', []);
     angular.module('QSoft.services', ['ngStorage', 'restangular', 'ngFileUpload']);
-    angular.module('QSoft.modules', ['ui.bootstrap', 'ngAnimate', 'ui.bootstrap.datetimepicker', 'ui.dateTimeInput', 'infinite-scroll']);
+    angular.module('QSoft.modules', ['ui.bootstrap', 'ngAnimate', 'ui.bootstrap.datetimepicker', 'ui.dateTimeInput', 'ui.calendar', 'infinite-scroll']);
     angular.module('QSoft.run', []);
 
 
