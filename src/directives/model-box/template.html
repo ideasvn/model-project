@@ -3,6 +3,8 @@
         <img ng-src="{{data.image}}" class="img-responsive"/>
     </div>
     <div class="model-item_title">
-        <span><a ng-href="" ng-bind="data.title"></a></span>
+        <a ui-sref="app.detailModel({id:data.link})">
+            <span ng-bind="data.title"></span>
+        </a>
     </div>
 </div>
