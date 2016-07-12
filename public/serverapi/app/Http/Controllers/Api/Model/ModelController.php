@@ -43,4 +43,9 @@ class ModelController extends ApiController
 
         return response()->json(User::with('profile', 'galleries')->paginate($this->perPage));
     }
+
+    public function show($id) {
+        $users = User::findOrFail($id)->load('profile', 'galleries');
+        return $this->response->array(['data' => $users]);
+    }
 }
