@@ -77,6 +77,8 @@ $api->version('v1', function ($api) {
         $api->resource('booking', 'Booking\BookingController');
         $api->post('booking-list', 'Booking\BookingController@listBooking');
         $api->post('check-date', 'Booking\BookingController@checkDate');
+
+        $api->get('users/{id}', 'Model\ModelController@show');
 //        Route::get('model', [
 //            'as' => 'model', 'uses' => 'ModelNudeController@index'
 //        ]);
