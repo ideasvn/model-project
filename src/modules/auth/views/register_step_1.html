@@ -3,7 +3,7 @@
         <div class="col-md-12 well text-center">
             <form xt-form strategy="dirtyOrFocusedOrSubmitted" focus-error="true" tooltip-trigger="hover manual"
                   name="applicationForm" ng-submit="actionStepOne(applicationForm)" role="form" novalidate>
-                <h2 class="title-panel">Thông tin người mẫu</h2>
+                <h2 class="title-panel">Thông tin cá nhân</h2>
                 <div class="form-row">
                     <div class="row">
                         <div class="col-xs-5">
@@ -27,6 +27,34 @@
                                 </div>
                                 <div class="col-md-8">
                                     <input type="text" name="last_name" ng-model="node.last_name" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Email *: </label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="email" name="email" ng-model="node.email" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Mật khẩu *: </label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="password" name="password" ng-model="node.password" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -73,20 +101,48 @@
                                     <label>Ngày sinh:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <p class="input-group">
-                                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                                               ng-model="dt" is-open="birthday.opened" datepicker-options="dateOptions"
-                                               ng-required="true" close-text="Close"
-                                               alt-input-formats="altInputFormats"/>
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-default" ng-click="openCalendar()"><i
-                    class="fa fa-calendar"></i></button>
-          </span>
-                                    </p>
+                                    <div class="datePicker">
+                                        <a class="dropdown-toggle" id="birthday" role="button" data-toggle="dropdown" data-target="#">
+                                            <input class="botronBottomLeft botronBottomRight border"
+                                                   readonly data-date-time-input="YYYY-MM-DD"
+                                                   placeholder="" type="text" name="birthday" ng-model="node.birthday"
+                                                   xt-validation-tooltip required/>
+                                            <button type="button" class="app-button"><i class="app-icon icon-schedule"></i></button>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <datetimepicker ng-model="node.birthday"
+                                                            data-datetimepicker-config="{dropdownSelector: '#birthday', startView:'day',minView:'day'}"/>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Tỉnh/Thành phố *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select name="location_id" ng-model="node.location_id"
+                                            ng-options="n.id as n.name for n in locations"
+                                            class="botronBottomLeft botronBottomRight"
+                                            xt-validation-tooltip required>
+                                        <option value="">Chọn địa bàn hoạt động</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-form flex">
+                    <div class="space"></div>
+                    <button type="submit" class="next flex-end">
+                        Bước 2 <i class="app-icon icon-right-arrow"></i>
+                    </button>
                 </div>
             </form>
         </div>

@@ -1,7 +1,7 @@
 <div class="row form-group">
     <div class="col-xs-12">
         <ul class="nav nav-pills nav-justified thumbnail setup-panel">
-            <li ng-class="($state.current.name.split('.')[2] === 'step_1' || $state.current.name.split('.')[1] === 'register') ? 'active' : 'disabled'"><a href="javascript:;">
+            <li ng-class="$state.current.name.split('.')[2] === 'step_1' ? 'active' : 'disabled'"><a href="javascript:;">
                 <h4 class="list-group-item-heading">Bước 1</h4>
                 <p class="list-group-item-text">Thông tin cá nhân</p>
             </a></li>
