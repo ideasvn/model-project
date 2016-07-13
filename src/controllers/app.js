@@ -8,7 +8,7 @@
         'QSoft.filters',
         'QSoft.services',
         'QSoft.modules',
-		'QSoft.run'
+        'QSoft.run'
     ]);
     angular.module('QSoft.routers', ['ui.router']);
     angular.module('QSoft.configs', ['ngMeta', 'ngFlash', 'xtForm']);
