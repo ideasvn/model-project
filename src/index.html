@@ -6,20 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title ng-bind="ngMeta.title">Vietnam's Next Top Models</title>
-    <meta name="description" content="{{ngMeta.description}}" />
-    <meta name="author" content="{{ngMeta['author']}}" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500italic,500,700italic,700" rel="stylesheet" type="text/css">
+    <meta name="description" content="{{ngMeta.description}}"/>
+    <meta name="author" content="{{ngMeta['author']}}"/>
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500italic,500,700italic,700"
+          rel="stylesheet" type="text/css">
     <link href="/assets/css/core.css" rel="stylesheet">
+    <link href="/assets/css/app.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/modules.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="/assets/js/ie.js"></script>
     <![endif]-->
 </head>
 <body ng-cloak>
-<ui-view></ui-view>
-<div class="QsLoading"></div>
+    <div class="container">
+        <div id="header" ui-view="header"></div>
+        <div id="main" ui-view="main"></div>
+        <div id="footer" ui-view="footer"></div>
+    </div>
+
+    <div class="QsLoading"></div>
 <script src="/assets/js/libs.js"></script>
 <script src="/assets/js/core.js"></script>
 <script src="/assets/js/app.js"></script>

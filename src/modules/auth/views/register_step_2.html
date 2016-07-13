@@ -1,0 +1,131 @@
+<div class="row setup-content" id="step-1">
+    <div class="col-xs-12">
+        <div class="col-md-12 well text-center">
+            <form xt-form strategy="dirtyOrFocusedOrSubmitted" focus-error="true" tooltip-trigger="hover manual"
+                  name="applicationForm" ng-submit="actionStepTwo(applicationForm)" role="form" novalidate>
+                <h2 class="title-panel">Thông tin người mẫu</h2>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Chiều cao:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="height" ng-model="node.height" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Vòng ngực:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="round_breast" ng-model="node.round_breast" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Vòng eo *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="waist_size" ng-model="node.waist_size" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Vòng mông *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="round_hip" ng-model="node.round_hip" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Cỡ áo *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="dress_size" ng-model="node.dress_size" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Cỡ giày *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="shore_size" ng-model="node.shore_size" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Màu tóc *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="hair_color" ng-model="node.hair_color" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>Màu mắt *:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="eye_color" ng-model="node.eye_color" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-form flex">
+                    <button class="prev" ui-sref="auth.register.step_1"><i
+                            class="app-icon icon-left-arrow"></i>Bước 1
+                    </button>
+                    <div class="space"></div>
+                    <button type="submit" class="next flex-end">
+                        Bước 3 <i class="app-icon icon-right-arrow"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

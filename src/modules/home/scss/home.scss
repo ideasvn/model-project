@@ -1,0 +1,41 @@
+#home-page {
+    .carousel-control {
+        background-image: none;
+    }
+}
+
+
+#page-title {
+    position: relative;
+    padding: 0 45px;
+    text-transform: uppercase;
+    color: #231f20;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+
+    &:before {
+        background: #231f20;
+        content: '';
+        left: 0;
+        height: 1px;
+        margin-top: -0.5px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        z-index: 0;
+    }
+
+    span {
+        font-size: 1.214em;
+        background: white;
+        position: relative;
+        padding: 0 10px;
+    }
+}
+
+.home-galleries {
+    .item {
+        padding: 10px;
+    }
+}

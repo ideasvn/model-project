@@ -1,0 +1,20 @@
+<div class="row form-group">
+    <div class="col-xs-12">
+        <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+            <li ng-class="$state.current.name.split('.')[2] === 'step_1' ? 'active' : 'disabled'"><a href="javascript:;">
+                <h4 class="list-group-item-heading">Bước 1</h4>
+                <p class="list-group-item-text">Thông tin cá nhân</p>
+            </a></li>
+            <li ng-class="$state.current.name.split('.')[2] === 'step_2' ? 'active' : 'disabled'"><a href="javascript:;">
+                <h4 class="list-group-item-heading">Bước 2</h4>
+                <p class="list-group-item-text">Thông tin người mẫu</p>
+            </a></li>
+            <li ng-class="$state.current.name.split('.')[2] === 'step_3' ? 'active' : 'disabled'"><a href="javascript:;">
+                <h4 class="list-group-item-heading">Bước 3</h4>
+                <p class="list-group-item-text">Upload ảnh</p>
+            </a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix" ui-view="contents_forms"></div>
+{{node}}
