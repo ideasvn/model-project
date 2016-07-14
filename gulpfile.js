@@ -40,7 +40,7 @@ var configs = {
         './src/controllers/filters.js',
         './src/controllers/services.js',
         './src/controllers/routers.js',
-        './src/controllers/components/**/*.js'
+        './src/services/**/*.js'
     ],
     'ieJS': [
         './assets/js/html5shiv.min.js',
