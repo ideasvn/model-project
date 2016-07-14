@@ -56,6 +56,7 @@ class AuthController extends ApiController
         $userData = Sentinel::registerAndActivate($user);
         if (count($userData)):
             if (array_filter($profile)):
+                $profile['user_id'] = $userData->id;
                 $profileData = Profile::create($profile);
                 $userName = str_slug($userData->first_name . $userData->last_name . $userData->id);
                 if ($request->hasFile('gallery')):
@@ -67,13 +68,13 @@ class AuthController extends ApiController
                         if ($isDone):
                             Gallery::create([
                                 'user_id' => $userData->id,
-                                'images' => '/uploads/' . $fileName
+                                'images' => '/serverapi/public/uploads/' . $fileName
                             ]);
                         endif;
                     endforeach;
                 endif;
             endif;
         endif;
-        return $this->response->array($userData);
+        return $this->response->array(['data' => $userData, 'success' => true]);
     }
 }

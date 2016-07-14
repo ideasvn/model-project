@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
-{
-    protected $table='booking';
+class Booking extends Model {
+
+    protected $table = 'booking';
     /**
      * The attributes that are mass assignable.
      *
@@ -20,15 +20,14 @@ class Booking extends Model
      * @var array
      */
     protected $hidden = [
-
     ];
 
-    public function getByAll($condition,$value)
-    {
-        return Booking::select('id', 'model_id as modelId', 'agent_id as agentId', 'start_time as startTime', 'end_time as endTime', 'status')->whereRaw($condition, $value)->get();
+    public function getByAll($condition, $value) {
+        return Booking::select('id', 'model_id as modelId', 'agent_id as agentId', 'start_time as startTime', 'end_time as endTime', 'status', 'title')->whereRaw($condition, $value)->get();
     }
 
-    public function booking($condition,$value) {
+    public function booking($condition, $value) {
         return Booking::select('id')->whereRaw($condition, $value)->count();
     }
+
 }

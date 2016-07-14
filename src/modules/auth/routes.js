@@ -30,6 +30,7 @@ angular.module('QSoft.routers').config(['$stateProvider', function ($stateProvid
         })
         .state('auth.register', {
             url: '/register',
+            abstract: true,
             meta: {
                 title: 'Đăng ký thành viên',
                 description: ''

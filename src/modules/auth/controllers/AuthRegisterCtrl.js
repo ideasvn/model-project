@@ -1,56 +1,68 @@
-angular.module('QSoft.modules').controller('AuthRegisterCtrl', ['$scope', '$state', 'Upload', 'AuthServices',
-        function ($scope, $state, Upload, AuthServices) {
+angular.module('QSoft.modules')
+    .controller('AuthRegisterCtrl', ['$scope', '$state', 'Upload', 'AuthServices', 'LocationServices',
+        '$localStorage',
+        function ($scope, $state, Upload, AuthServices, LocationServices, $localStorage) {
             $scope.$state = $state;
             $scope.qsFormCreate = true;
-            $scope.node = {};
+            if(_.isUndefined($localStorage.userRegisterData)) {
+                $scope.node = {};
+            } else {
+                $scope.node = $localStorage.userRegisterData;
+            }
+
+            $scope.maxImages = 10;
+
             $scope.genders = [
                 {id: 0, name: "Name"},
                 {id: 1, name: "Nữ"}
             ];
 
-            $scope.birthday = {
-                opened: false
-            };
+            LocationServices.listAll().then(function (res) {
+                $scope.locations = res;
+            }, function (err) {
+                console.log('Error!!', err);
+            });
 
-            $scope.openCalendar = function () {
-                $scope.birthday.opened = true;
-            };
             //Process file before upload
-            // $scope.processUpload = function (documentRequiredID, file, errFile) {
-            //     if(file) {
-            //         $scope.node.gallery.push(file);
-            //     }
-            // };
-            if($scope.$state.current.url ==='register') {
-                $state.go('auth.register.step_1');
-            }
-            $scope.actionRegisterStep1 = function (formData) {
-                if (formData.$invalid) {
-                    return false;
-                }
-                if ($state.current.name === 'application.add.step_1' && formData.$valid) {
-                    $state.go('application.add.step_2');
+            $scope.processUpload = function (galleryID, file, errFile) {
+                if(file) {
+                    $scope.node.gallery[galleryID] = file;
+                    console.log($scope.node.gallery[galleryID]);
                 }
             };
 
-            $scope.actionRegisterStep2 = function (formData) {
+            $scope.actionStepOne = function (formData) {
                 if (formData.$invalid) {
                     return false;
                 }
-                if ($state.current.name === 'application.add.step_2' && formData.$valid) {
-                    $state.go('application.add.step_3');
+                $scope.node.type = 0;
+                $localStorage.userRegisterData = $scope.node;
+                if ($state.current.name === 'auth.register.step_1') {
+                    $state.go('auth.register.step_2');
                 }
             };
 
-            $scope.actionRegisterStep3 = function (formData) {
+            $scope.actionStepTwo = function (formData) {
                 if (formData.$invalid) {
                     return false;
                 }
-                // AuthServices.create($scope.node).then(function (res) {
-                //     if(res.success) {
-                //         qsPreLoader.status(false);
-                //         $state.go('application.payment', {application_id: res.data.id});
-                //     }
-                // });
+                $scope.node.birthday = moment($scope.node.birthday).format('YYYY-MM-DD');
+                $localStorage.userRegisterData = $scope.node;
+                if ($state.current.name === 'auth.register.step_2' && formData.$valid) {
+                    $state.go('auth.register.step_3');
+                }
+            };
+
+            $scope.actionStepThree = function (formData) {
+                if (formData.$invalid) {
+                    return false;
+                }
+                $localStorage.userRegisterData = undefined;
+                AuthServices.create($scope.node).then(function (res) {
+                    console.log(res);
+                    if(res.success) {
+                        $state.go('app.home');
+                    }
+                });
             };
         }]);

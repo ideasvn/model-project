@@ -1,0 +1,6 @@
+1.Download code link: https://github.com/laravel/laravel
+2.Download composer.phar, cop vao thu muc goc
+3.Cai dat composer: php composer.phar install
+4.copy file .env.example sua ten thanh file .env
+5.gen key cho file .env: php artisan key:generate
+

@@ -1,7 +1,84 @@
-<div class="row setup-content" id="step-3">
+<div class="row setup-content" id="step-1">
     <div class="col-xs-12">
-        <div class="col-md-12 well">
-            <h1 class="text-center"> STEP 3</h1>
+        <div class="col-md-12 well text-center">
+            <form xt-form strategy="dirtyOrFocusedOrSubmitted" focus-error="true" tooltip-trigger="hover manual"
+                  name="applicationForm" ng-submit="actionStepThree(applicationForm)" role="form" novalidate>
+                <h2 class="title-panel">Upload hình ảnh</h2>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="file" name="gallery[0]" ng-model="node.gallery[0]"
+                                           ngf-select="processUpload(0, $file, $invalidFiles)" ngf-max-size="100MB"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="file" name="gallery[1]" ng-model="node.gallery[1]"
+                                           ngf-select="processUpload(1, $file, $invalidFiles)" ngf-max-size="100MB"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="file" name="gallery[2]" ng-model="node.gallery[2]"
+                                           ngf-select="processUpload(2, $file, $invalidFiles)" ngf-max-size="100MB"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="file" name="gallery[3]" ng-model="node.gallery[3]"
+                                           ngf-select="processUpload(3, $file, $invalidFiles)" ngf-max-size="100MB"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="file" name="gallery[4]" ng-model="node.gallery[4]"
+                                           ngf-select="processUpload(4, $file, $invalidFiles)" ngf-max-size="100MB"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-form flex">
+                    <button class="prev" ui-sref="auth.register.step_2"><i
+                            class="app-icon icon-left-arrow"></i>Bước 2
+                    </button>
+                    <div class="space"></div>
+                    <button type="submit" class="next flex-end">
+                        Đăng ký hồ sơ <i class="app-icon icon-right-arrow"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

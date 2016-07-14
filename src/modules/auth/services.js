@@ -6,14 +6,12 @@ angular.module('QSoft.services').service('AuthServices', ['Restangular', '$q', f
     obj.create = function (params) {
         var defer = $q.defer();
         var fd = new FormData();
-        console.log(params);
-        return false;
         _.map(params, function (value, key) {
-            if (key !== 'documentRequired') {
+            if (key !== 'gallery') {
                 fd.append(key, value)
             } else {
                 _.map(value, function (v, k) {
-                    fd.append('documentRequired[' + k + ']', v);
+                    fd.append('gallery[' + k + ']', v);
                 });
             }
         });

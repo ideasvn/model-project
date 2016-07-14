@@ -70,6 +70,7 @@ $api->version('v1', function ($api) {
         });
 
         $api->post('register', 'Auth\AuthController@register');
+        $api->get('locations', 'Location\LocationController@index');
 
         /**
          * tungtv api
