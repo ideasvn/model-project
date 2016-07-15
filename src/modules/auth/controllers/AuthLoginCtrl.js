@@ -1,6 +1,6 @@
 angular.module('QSoft.modules')
-    .controller('AuthLoginCtrl', ['$scope', '$state', 'AuthServices', '$localStorage', 'qsModal',
-        function ($scope, $state, AuthServices, $localStorage, qsModal) {
+    .controller('AuthLoginCtrl', ['$rootScope', '$scope', '$state', 'AuthServices', '$localStorage', 'qsModal',
+        function ($rootScope, $scope, $state, AuthServices, $localStorage, qsModal) {
             $scope.actionLogin = function (formData) {
                 console.log(formData);
                 if (formData.$invalid) {
