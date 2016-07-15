@@ -62,22 +62,17 @@
                     <div class='wrap-calendar'>
                         <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
                         <flash-message></flash-message>
-                        <button class='btn btn-default btn-lg' type='submit' ng-click="booking()" style='margin-top:5px'>Booking</button>
                     </div>
                 </div>
                 <div>
                     <div class="col-md-12" style='margin-bottom:30px'>
+                        <button class='btn btn-default btn-lg' type='submit' ng-click="booking()" style='margin-top:5px;margin-bottom:10px'>Booking</button>
                         <p>Title</p>
                         <input required name='title' type="text" class="form-control" ng-model="node.title"/>
                     </div>
                     <div class="col-md-6" style='margin-bottom:30px'>
                         <p>Start Date</p>
-                        <p class="input-group">
-                            <input required name='startDate' type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="popup1.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-                        </p>
+                        <input readonly required name='startDate' type="text" class="form-control" ng-model="node.startDate" is-open="popup1.opened" ng-required="true" />
                         <p>Hours</p>
                         <select required name='startHours' class="form-control" ng-model="node.startHours">
                             <option>09</option>
@@ -105,9 +100,7 @@
                     </div>
                     <div class="col-md-6" style='margin-bottom:30px'>
                         <p>End Date</p>
-                        <p class="input-group">
-                            <input readonly type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                        </p>
+                        <input readonly type="text" class="form-control" ng-model="node.endDate" ng-required="true" />
                         <p>Hours</p>
                         <select required name='endHours' class="form-control" ng-model="node.endHours">
                             <option>09</option>

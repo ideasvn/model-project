@@ -3,8 +3,8 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
         $scope.ID = $stateParams.id;
         $scope.events = [];
         $scope.node = {
-            startDate: new Date(),
-            endDate: new Date(),
+            startDate: moment(new Date()).format('YYYY-MM-DD'),
+            endDate: moment(new Date()).format('YYYY-MM-DD'),
             startHours: '09',
             endHours: '10',
             startMins: '00',
@@ -53,7 +53,9 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
                     center: '',
                     right: 'today prev,next'
                 },
-                eventClick: $scope.alertOnEventClick,
+                dayClick: function (date, jsEvent, view) {
+                    $scope.node.startDate = moment(date.format()).format('YYYY-MM-DD');
+                },
             }
         };
         $scope.$watch('node.startDate', function (newVal, oldVal) {
@@ -61,6 +63,7 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
                 $scope.node.endDate = newVal;
             }
         })
+
         $scope.booking = function () {
             var data = angular.copy($scope.node);
             data.startDate = moment(data.startDate).format('YYYY-MM-DD');
@@ -69,10 +72,9 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
             Restangular.all('check-date').post(data).then(function (res) {
                 if (res.status_code == 200) {
                     Restangular.all('booking').post(data).then(function (res) {
-
+                        Flash.create('success', "Booking lịch cho model thành công");
                     });
                 } else if (res.status_code == 400) {
-                    console.log(res.status_code);
                     Flash.create('danger', "Lịch này đã trùng");
                 }
             })
