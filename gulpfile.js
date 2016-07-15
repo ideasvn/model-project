@@ -52,7 +52,7 @@ var configs = {
     'styleCSS': './src/scss/style.scss',
     'modulesCSS': [
         './src/layouts/scss/*.scss',
-        './src/modules/**/scss/*.scss'
+        './src/modules/**/*.scss'
     ],
     'fonts': './assets/fonts',
     'images': './assets/img',

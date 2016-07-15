@@ -9,9 +9,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class='row'>
-                <uib-carousel active="active" interval="2000" >
+                <uib-carousel active="active">
                     <uib-slide ng-repeat="image in detailModel.images" index="$index">
-                        <img ng-src="{{image.value}}" style="margin:auto;">
+                        <img ng-src="{{image}}" style="margin:auto;">
                         <div class="carousel-caption">
                         </div>
                     </uib-slide>
@@ -57,80 +57,84 @@
             </div>
         </div>
         <div class='col-md-8'>
-            <div class="col-md-12">
-                <div class='wrap-calendar'>
-                    <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
-                    <button class='btn btn-default btn-lg' style='margin-top:5px'>Booking</button>
+            <form novalidate name='booking'>
+                <div class="col-md-12">
+                    <div class='wrap-calendar'>
+                        <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+                        <flash-message></flash-message>
+                        <button class='btn btn-default btn-lg' type='submit' ng-click="booking()" style='margin-top:5px'>Booking</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="col-md-6">
-                    <p>Start Date</p>
-                    <p class="input-group">
-                        <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="popup1.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                    </p>
-                    <p>Hours</p>
-                    <select class="form-control" ng-model="node.startHours">
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                    </select>
-                    <p>Mins</p>
-                    <select class="form-control" ng-model="node.startMins">
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                    </select>
+                <div>
+                    <div class="col-md-12" style='margin-bottom:30px'>
+                        <p>Title</p>
+                        <input required name='title' type="text" class="form-control" ng-model="node.title"/>
+                    </div>
+                    <div class="col-md-6" style='margin-bottom:30px'>
+                        <p>Start Date</p>
+                        <p class="input-group">
+                            <input required name='startDate' type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="popup1.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                        <p>Hours</p>
+                        <select required name='startHours' class="form-control" ng-model="node.startHours">
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                        </select>
+                        <p>Mins</p>
+                        <select required name='startMins' class="form-control" ng-model="node.startMins">
+                            <option value="00">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6" style='margin-bottom:30px'>
+                        <p>End Date</p>
+                        <p class="input-group">
+                            <input readonly type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="node.endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        </p>
+                        <p>Hours</p>
+                        <select required name='endHours' class="form-control" ng-model="node.endHours">
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                        </select>
+                        <p>Mins</p>
+                        <select required name='endMins' class="form-control" ng-model="node.endMins">
+                            <option value="00">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p>End Date</p>
-                    <p class="input-group">
-                        <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="dt2" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="popup2.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                    </p>
-                    <p>Hours</p>
-                    <select class="form-control" ng-model="node.endHours">
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                    </select>
-                    <p>Mins</p>
-                    <select class="form-control" ng-model="node.endMins">
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                    </select>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

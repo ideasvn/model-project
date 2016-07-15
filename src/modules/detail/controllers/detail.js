@@ -1,23 +1,36 @@
-angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', '$stateParams', '$compile', 'Restangular', '$stateParams', 'listBooking', function ($scope, $log, $stateParams, $compile, Restangular, $stateParams, listBooking) {
+angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', '$stateParams', '$compile', 'Restangular', '$stateParams', 'listBooking', 'Flash', function ($scope, $log, $stateParams, $compile, Restangular, $stateParams, listBooking, Flash) {
         $scope.checkBooking = false;
         $scope.ID = $stateParams.id;
         $scope.events = [];
-        $scope.detailModel = {
-            images: [{id: 1, value: 'img/model/1.jpg'}, {id: 2, value: 'img/model/1.jpg'}, {id: 3, value: 'img/model/1.jpg'}],
-            roundBrest: 90,
-            waistSize: 90,
-            roundHip: 90,
-            dressSize: 90,
-            shoreSize: 90,
-            hairColor: 'đen',
-            eyeColor: 'đen',
-            height: '1m80',
-        };
+        $scope.node = {
+            startDate: new Date(),
+            endDate: new Date(),
+            startHours: '09',
+            endHours: '10',
+            startMins: '00',
+            endMins: '00'
+        }
+        Restangular.one('users').one($scope.ID).get().then(function (res) {
+            var res = res.data;
+            $scope.detailModel = {
+                images: _.map(res.galleries, function (o) {
+                    return o.images;
+                }),
+                roundBrest: res.profile.round_breast,
+                waistSize: res.profile.waist_size,
+                roundHip: res.profile.round_hip,
+                dressSize: res.profile.dress_size,
+                shoreSize: res.profile.shore_size,
+                hairColor: res.profile.hair_color,
+                eyeColor: res.profile.eye_color,
+                height: res.profile.height,
+            };
+        });
+
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
-        console.log(listBooking);
         angular.forEach(listBooking, function (val, key) {
             $scope.events.push({title: val.title, start: new Date(val.startTime), end: new Date(val.endTime)});
         })
@@ -43,8 +56,27 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
                 eventClick: $scope.alertOnEventClick,
             }
         };
+        $scope.$watch('node.startDate', function (newVal, oldVal) {
+            if (newVal) {
+                $scope.node.endDate = newVal;
+            }
+        })
+        $scope.booking = function () {
+            var data = angular.copy($scope.node);
+            data.startDate = moment(data.startDate).format('YYYY-MM-DD');
+            data.endDate = moment(data.endDate).format('YYYY-MM-DD');
+            data.idModel = $scope.ID;
+            Restangular.all('check-date').post(data).then(function (res) {
+                if (res.status_code == 200) {
+                    Restangular.all('booking').post(data).then(function (res) {
 
-
+                    });
+                } else if (res.status_code == 400) {
+                    console.log(res.status_code);
+                    Flash.create('danger', "Lịch này đã trùng");
+                }
+            })
+        }
         /* event sources array*/
         $scope.eventSources = [$scope.events];
     }]);

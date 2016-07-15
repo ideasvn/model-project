@@ -15,6 +15,16 @@ class BookingController extends ApiController {
     public function store(Request $request) {
         //
         $data = $this->model;
+        if ($request->has('title') && $request->title != '') {
+            $data->title = $request->title;
+        } else {
+            return $this->response->array('Not isset id title', 200);
+        }
+        if ($request->has('agentId') && $request->agentId != '') {
+            $data->agent_id = $request->agentId;
+        } else {
+            return $this->response->array('Not isset id agent id', 200);
+        }
         if ($request->has('idModel') && $request->idModel != '') {
             $data->model_id = $request->idModel;
         } else {
@@ -132,9 +142,9 @@ class BookingController extends ApiController {
         $dk = 'model_id = ? and start_time <= ? and end_time >= ?';
         $value = array($user_id, $startDate, $endDate);
         if ($this->model->booking($dk, $value) == 0) {
-            return $this->response->error('Chưa trùng lịch', 400);
+            return response()->json(array('data' => array(), 'status_code' => 200));
         } else {
-            return $this->response->array('Đã trùng lịch', 200);
+            return response()->json(array('data' => array(), 'status_code' => 400));
         }
     }
 
