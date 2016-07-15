@@ -14,6 +14,19 @@ angular.module('QSoft.routers').config(['$stateProvider', function ($stateProvid
                 }
             }
         })
+        .state('auth.logout', {
+            url: '/logout',
+            meta: {
+                title: 'Đăng xuất',
+                description: ''
+            },
+            views: {
+                'contents@auth': {
+                    controller: 'AuthLogoutCtrl',
+                    controllerAs: 'AuthLogoutCtrlAs'
+                }
+            }
+        })
         .state('auth.login', {
             url: '/login',
             meta: {

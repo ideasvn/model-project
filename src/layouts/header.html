@@ -8,7 +8,9 @@
 		<li><a ui-sref="app.home">Trang chủ</a></li>
 		<li><a ui-sref="app.male">Người Mẫu nam</a></li>
 		<li><a ui-sref="app.female">Người Mẫu nữ</a></li>
-		<li><a ui-sref="auth.register.step_1">Đăng ký</a></li>
-		<li><a ui-sref="auth.login">Đăng nhập</a></li>
+		<li ng-if="isQuest"><a ui-sref="auth.register.step_1">Đăng ký</a></li>
+		<li ng-if="isQuest"><a ui-sref="auth.login">Đăng nhập</a></li>
+		<li ng-if="isMember"><a ui-sref="auth.register.step_2">Trở thành người mẫu</a></li>
+		<li ng-if="isMember"><a ui-sref="auth.logout">Đăng xuất</a></li>
 	</ul>
 </nav>
