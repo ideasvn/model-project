@@ -70,8 +70,8 @@ $api->version('v1', function ($api) {
         });
 
         $api->post('register', 'Auth\AuthController@register');
+        $api->post('user-info', 'Auth\AuthController@userInfor');
         $api->get('locations', 'Location\LocationController@index');
-
         /**
          * tungtv api
          */
@@ -80,6 +80,7 @@ $api->version('v1', function ($api) {
         $api->post('check-date', 'Booking\BookingController@checkDate');
 
         $api->get('users/{id}', 'Model\ModelController@show');
+
 //        Route::get('model', [
 //            'as' => 'model', 'uses' => 'ModelNudeController@index'
 //        ]);

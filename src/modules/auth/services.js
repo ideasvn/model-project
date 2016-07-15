@@ -55,5 +55,15 @@ angular.module('QSoft.services')
                 return defer.promise;
             };
 
+            obj.user_info = function () {
+                var defer = $q.defer();
+                Restangular.service('user-info').post().then(function (res) {
+                    defer.resolve(res);
+                }, function (err) {
+                    defer.reject(err);
+                });
+                return defer.promise;
+            };
+
             return obj;
         }]);

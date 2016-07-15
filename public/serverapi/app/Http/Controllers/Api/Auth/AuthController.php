@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Gallery;
 use App\Http\Controllers\Api\ApiController;
 use App\Profile;
+use App\User;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Dingo\Api\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -76,5 +77,24 @@ class AuthController extends ApiController
             endif;
         endif;
         return $this->response->array(['data' => $userData, 'success' => true]);
+    }
+
+    public function userInfor()
+    {
+        $token = app('Dingo\Api\Auth\Auth')->user();
+        if (!$token) {
+            return $this->response->error('Yêu cầu không hợp lệ', 500);
+        }
+        $userID = $token->id;
+
+        $user = User::find($userID);
+
+        $res = [
+            'id' => $user->id,
+            'email' => $user->email,
+            'type' => $user->type,
+            'fullName' => $user->first_name . ' ' . $user->last_name
+        ];
+        return $this->response->array(['data' => $res, 'message' => 'Thành công']);
     }
 }
