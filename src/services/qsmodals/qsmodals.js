@@ -30,7 +30,7 @@ angular.module('QSoft.services').service('qsModal', ['$uibModal', '$log', '$q', 
         var qsModal = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            templateUrl: '/scss/services/qsmodals/scss/error.html',
+            templateUrl: '/views/services/qsmodals/views/error.html',
             controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
                 $scope.messages = params;
                 $scope.actionConfirm = function () {

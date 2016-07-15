@@ -14,8 +14,23 @@ angular.module('QSoft.routers').config(['$stateProvider', function ($stateProvid
                 }
             }
         })
+        .state('auth.login', {
+            url: '/login',
+            meta: {
+                title: 'Đăng nhập',
+                description: ''
+            },
+            views: {
+                'contents@auth': {
+                    controller: 'AuthLoginCtrl',
+                    controllerAs: 'AuthLoginCtrlAs',
+                    templateUrl: '/views/auth/views/login.html'
+                }
+            }
+        })
         .state('auth.register', {
             url: '/register',
+            abstract: true,
             meta: {
                 title: 'Đăng ký thành viên',
                 description: ''
