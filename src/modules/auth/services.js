@@ -4,7 +4,8 @@ angular.module('QSoft.services')
             var obj = {};
             var params = {};
             var baseRest = Restangular.service('register');
-
+            var baseRest3 = Restangular.service('update');
+            var baseRest2 = Restangular.service('users');
             obj.create = function (params) {
                 var defer = $q.defer();
                 var fd = new FormData();
@@ -62,6 +63,39 @@ angular.module('QSoft.services')
                 }, function (err) {
                     defer.reject(err);
                 });
+                return defer.promise;
+            };
+
+            obj.user_detail = function (params) {
+                var defer = $q.defer();
+                baseRest2.one(params).get().then(function (res) {
+                    defer.resolve(res.data);
+                }, function (err) {
+                    defer.reject(err);
+                });
+                return defer.promise;
+            };
+
+            obj.update = function (uid, params) {
+                var defer = $q.defer();
+                var fd = new FormData();
+                _.map(params, function (value, key) {
+                    if (key !== 'gallery') {
+                        fd.append(key, value)
+                    } else {
+                        _.map(value, function (v, k) {
+                            fd.append('gallery[' + k + ']', v);
+                        });
+                    }
+                });
+                baseRest3.one(uid)
+                    .withHttpConfig({transformRequest: angular.identity})
+                    .customPOST(fd, undefined, undefined, {'Content-Type': undefined})
+                    .then(function (res) {
+                        defer.resolve(res);
+                    }, function (err) {
+                        defer.reject(err);
+                    });
                 return defer.promise;
             };
 

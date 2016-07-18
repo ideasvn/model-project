@@ -70,6 +70,7 @@ $api->version('v1', function ($api) {
         });
 
         $api->post('register', 'Auth\AuthController@register');
+        $api->post('update/{id}', 'Auth\AuthController@update');
         $api->post('user-info', 'Auth\AuthController@userInfor');
         $api->get('locations', 'Location\LocationController@index');
         /**

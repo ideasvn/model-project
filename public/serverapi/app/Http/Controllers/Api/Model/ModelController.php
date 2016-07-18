@@ -38,13 +38,20 @@ class ModelController extends ApiController
     public function index()
     {
         $params = \Request::all();
+        $gender = isset($params->gender) ? $params->gender : NULL;
 
         $this->perPage = !empty($params['per_page']) ? $params['per_page'] : 12;
 
-        return response()->json(User::with('profile', 'galleries')->paginate($this->perPage));
+        return response()->json(User::where(function ($query) use ($gender) {
+            $query->where('type', '<>', 0);
+            if (!empty($gender)):
+                $query->where('gender', '=', $gender);
+            endif;
+        })->orderBy('created_at', 'DESC')->with('profile', 'galleries')->paginate($this->perPage));
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $users = User::findOrFail($id)->load('profile', 'galleries');
         return $this->response->array(['data' => $users]);
     }
