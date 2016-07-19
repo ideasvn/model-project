@@ -14,6 +14,7 @@
             var self = this,
                 uri = 'models';
             self.perPage = 12;
+            self.gender = 0;
 
             self.collection = {
                 busy: false,
@@ -29,7 +30,7 @@
                 }
 
                 self.collection.busy = true;
-                Restangular.all(uri).getList({per_page: self.collection.per_page, page: self.collection.after})
+                Restangular.all(uri).getList({gender: self.gender, per_page: self.collection.per_page, page: self.collection.after})
                     .then(function (res) {
                         var i = 0,
                             items = res.data;
