@@ -1,8 +1,8 @@
 <div class="login-page">
     <div class="form">
-        <form class="login-form" name="loginForm" ng-submit="actionLogin(loginForm)">
-            <input type="email" ng-model="username" placeholder="Tên dăng nhập" required/>
-            <input type="password" ng-model="password" placeholder="Mật khẩu" required/>
+        <form class="login-form" name="loginForm" ng-submit="loginForm.$valid && actionLogin(loginForm)">
+            <input validation required  form-name="loginForm" type="email" ng-model="username" placeholder="Tên dăng nhập" />
+            <input validation form-name="loginForm" type="password" ng-model="password" placeholder="Mật khẩu" required/>
             <button type="submit" class="btn btn-success">Đăng nhập</button>
             <p class="message">Bạn chưa đăng ký? <a ui-sref="auth.register.step_1">Tạo tài khoản</a></p>
         </form>

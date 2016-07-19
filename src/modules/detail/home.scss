@@ -15,3 +15,11 @@
     width:100%!important;
     height:100%!important;
 }
+
+form.ng-submitted input.ng-invalid, form.ng-submitted select.ng-invalid, form.ng-submitted textarea.ng-invalid {
+    border: 1px solid red;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
