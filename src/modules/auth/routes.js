@@ -41,21 +41,32 @@ angular.module('QSoft.routers').config(['$stateProvider', function ($stateProvid
                 }
             }
         })
-        .state('auth.register', {
-            url: '/register',
-            abstract: true,
+        .state('auth.register_member', {
+            url: '/dang-ky-thanh-vien',
             meta: {
                 title: 'Đăng ký thành viên',
                 description: ''
             },
             views: {
                 'contents@auth': {
+                    controller: 'AuthRegisterMemberCtrl',
+                    controllerAs: 'AuthRegisterMemberCtrlAs',
+                    templateUrl: '/views/auth/views/register_form.html'
+                }
+            }
+        })
+        .state('auth.register', {
+            url: '/register',
+            meta: {
+                title: 'Đăng ký thành viên',
+                description: ''
+            },
+            redirectTo: 'auth.register.step_1',
+            views: {
+                'contents@auth': {
                     controller: 'AuthRegisterCtrl',
                     controllerAs: 'AuthRegisterCtrlAs',
                     templateUrl: '/views/auth/views/register.html'
-                },
-                'contents_forms@auth.register': {
-                    templateUrl: '/views/auth/views/register_step_1.html'
                 }
             }
         })

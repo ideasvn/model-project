@@ -125,7 +125,7 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
             }
         })
 
-        $scope.actionBooking = function () {
+        $scope.bookingModel = function () {
             var data = angular.copy($scope.node);
             data.startDate = moment(data.startDate).format('YYYY-MM-DD');
             data.endDate = moment(data.endDate).format('YYYY-MM-DD');

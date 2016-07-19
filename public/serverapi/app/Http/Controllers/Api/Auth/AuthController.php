@@ -79,6 +79,57 @@ class AuthController extends ApiController
         return $this->response->array(['data' => $userData, 'success' => true]);
     }
 
+    public function update($id, Request $request)
+    {
+        $credentials = [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'gender' => $request->gender,
+            'phone' => $request->phone,
+            'birthday' => $request->birthday,
+            'type' => $request->type,
+            'location_id' => $request->location_id,
+        ];
+
+        $profile = [
+            'height' => $request->height,
+            'round_breast' => $request->round_breast,
+            'waist_size' => $request->waist_size,
+            'round_hip' => $request->round_hip,
+            'dress_size' => $request->dress_size,
+            'shore_size' => $request->shore_size,
+            'hair_color' => $request->hair_color,
+            'eye_color' => $request->eye_color,
+        ];
+
+        $userData = Sentinel::findById($id);
+        if (count($userData)):
+            Sentinel::update($userData, $credentials);
+            if (array_filter($profile)):
+                $profile['user_id'] = $userData->id;
+                $profileData = Profile::create($profile);
+                $userName = str_slug($credentials['first_name'] . $credentials['last_name'] . $id);
+                if ($request->hasFile('gallery')):
+                    $files = $request->file('gallery');
+                    foreach ($files as $key => $file):
+                        $fileExt = $file->getClientOriginalExtension();
+                        $fileName = $userName . '-' . $key . '.' . $fileExt;
+                        $isDone = Storage::disk('public')->put($fileName, file_get_contents($file));
+                        if ($isDone):
+                            Gallery::create([
+                                'user_id' => $userData->id,
+                                'images' => '/serverapi/public/uploads/' . $fileName
+                            ]);
+                        endif;
+                    endforeach;
+                endif;
+            endif;
+        endif;
+        return $this->response->array(['data' => $userData, 'success' => true]);
+    }
+
     public function userInfor()
     {
         $token = app('Dingo\Api\Auth\Auth')->user();

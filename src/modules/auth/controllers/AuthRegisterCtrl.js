@@ -4,16 +4,26 @@ angular.module('QSoft.modules')
         function ($scope, $state, Upload, AuthServices, LocationServices, $localStorage) {
             $scope.$state = $state;
             $scope.qsFormCreate = true;
+            if($state.current.redirectTo) {
+                $state.go($state.current.redirectTo);
+            }
+            if(_.isUndefined($localStorage.userInfo)) {
+                $state.go('app.home', {}, {reload: true});
+            } else {
+                $scope.uID = $localStorage.userInfo.id;
+            }
+            $scope.node = {};
             if(_.isUndefined($localStorage.userRegisterData)) {
-                $scope.node = {};
+                AuthServices.user_detail($scope.uID).then(function (res) {
+                    $scope.node = res;
+                });
             } else {
                 $scope.node = $localStorage.userRegisterData;
             }
-
             $scope.maxImages = 10;
 
             $scope.genders = [
-                {id: 0, name: "Name"},
+                {id: 0, name: "Nam"},
                 {id: 1, name: "Nữ"}
             ];
 
@@ -35,7 +45,7 @@ angular.module('QSoft.modules')
                 if (formData.$invalid) {
                     return false;
                 }
-                $scope.node.type = 0;
+
                 $localStorage.userRegisterData = $scope.node;
                 if ($state.current.name === 'auth.register.step_1') {
                     $state.go('auth.register.step_2');
@@ -58,7 +68,8 @@ angular.module('QSoft.modules')
                     return false;
                 }
                 $localStorage.userRegisterData = undefined;
-                AuthServices.create($scope.node).then(function (res) {
+                $scope.node.type = 1;
+                AuthServices.update($scope.uID, $scope.node).then(function (res) {
                     console.log(res);
                     if(res.success) {
                         $state.go('app.home');

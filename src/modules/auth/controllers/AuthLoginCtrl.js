@@ -18,7 +18,9 @@ angular.module('QSoft.modules')
                 AuthServices.login(loginData).then(function (res) {
                     AuthServices.user_info().then(function (res) {
                         $localStorage.userInfo = res.data;
-                        $state.go('app.home', {}, {reload: true});
+                        if(!_.isUndefined($localStorage.userInfo)) {
+                            $state.go('app.home', {}, {reload: true});
+                        }
                     }, function (err) {
                         qsModal.error('Thông tin tài khoản không chính xác, vui lòng thử lại');
                     });
