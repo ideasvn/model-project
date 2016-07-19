@@ -1,4 +1,10 @@
-angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', '$stateParams', '$compile', 'Restangular', '$stateParams', 'listBooking', 'Flash', function ($scope, $log, $stateParams, $compile, Restangular, $stateParams, listBooking, Flash) {
+angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', '$stateParams', '$compile', 'Restangular', '$stateParams', 'listBooking', 'Flash', '$localStorage', function ($scope, $log, $stateParams, $compile, Restangular, $stateParams, listBooking, Flash, $localStorage) {
+        $scope.inforUser = $localStorage.userInfo;
+        if ($scope.inforUser.type == 0) {
+            $scope.checkShowBooking = true;
+        } else if ($scope.inforUser.type == 1) {
+            $scope.checkShowBooking = true;
+        }
         $scope.checkBooking = false;
         $scope.ID = $stateParams.id;
         $scope.events = [];
@@ -27,10 +33,6 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
             };
         });
 
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
         angular.forEach(listBooking, function (val, key) {
             $scope.events.push({title: val.title, start: new Date(val.startTime), end: new Date(val.endTime)});
         })
@@ -69,10 +71,12 @@ angular.module('QSoft.modules').controller('DetailModelCtr', ['$scope', '$log', 
             data.startDate = moment(data.startDate).format('YYYY-MM-DD');
             data.endDate = moment(data.endDate).format('YYYY-MM-DD');
             data.idModel = $scope.ID;
+            data.agentId = $scope.inforUser.id;
             Restangular.all('check-date').post(data).then(function (res) {
                 if (res.status_code == 200) {
                     Restangular.all('booking').post(data).then(function (res) {
                         Flash.create('success', "Booking lịch cho model thành công");
+                        $scope.events.push({title: data.title, start: new Date(data.startDate + ' ' + data.startHours + ':' + data.startMins), end: new Date(data.endDate + ' ' + data.endHours + ':' + data.endMins)});
                     });
                 } else if (res.status_code == 400) {
                     Flash.create('danger', "Lịch này đã trùng");
