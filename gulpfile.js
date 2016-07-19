@@ -23,7 +23,8 @@ var configs = {
         './assets/js/ng-file-upload-all.min.js',
         './assets/js/calendar.js',
         './assets/js/fullcalendar.min.js',
-        './assets/js/ng-infinite-scroll.min.js'
+        './assets/js/ng-infinite-scroll.min.js',
+        './assets/js/angular-moment.min.js'
     ],
     'libsJS': [
         './assets/js/jquery.min.js',
